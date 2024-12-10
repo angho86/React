@@ -1,8 +1,10 @@
 import React from "react";
 import { calculateScore } from "./GameLogic";
+import { calculateTerritory } from "./CalculateTerritory.jsx";
 
 const Scoreboard = ({ board }) => {
     const { black, white } = calculateScore(board);
+    const { black: blackTerritory, white: whiteTerritory } = calculateTerritory(board);
 
     return (
         <div
@@ -21,8 +23,11 @@ const Scoreboard = ({ board }) => {
                 </div>
 
                 <div style = {{ color: "white", backgroundColor: "black", padding: "5px", borderRadius: "4px"}}>
-                    <strong>Balti: </strong> {white}
+                    <strong>Balti: </strong> {black} (akmenys) + {blackTerritory} (teritorija)
                 </div>
+                <div style={{ color: "white", backgroundColor: "black", padding: "5px", borderRadius: "4px" }}>
+        <strong>Balti:</strong> {white} (akmenys) + {whiteTerritory} (teritorija)
+      </div>
                 </div>
     );
 };
