@@ -31,7 +31,7 @@ const NavigationBar = () => {
         return <PaspirtukuIstorija />
   
       default:
-          return <MapComponent lat={kaunas.lat} long={kaunas.long}/> 
+          
     }
   };
 
